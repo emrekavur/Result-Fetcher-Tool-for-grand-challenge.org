@@ -21,11 +21,11 @@ import simplejson
 ## 1) Parameters for CHAOS challenge to get DICE values
 url = "https://chaos.grand-challenge.org/evaluation/results/"  # Results page of CHAOS challenge.
 main_key = 'case'
-sub_key = 'Total_scr'  # 'Total_scr', 'DICE', 'ASSD', 'MSSD', 'RAVD', 'DICE_scr', 'ASSD_scr', 'MSSD_scr', 'RAVD_scr' can be selected.
+sub_key = 'DICE'  # 'Total_scr', 'DICE', 'ASSD', 'MSSD', 'RAVD', 'DICE_scr', 'ASSD_scr', 'MSSD_scr', 'RAVD_scr' can be selected.
 multitask = True
 include_empty_tasks = False
 exclude_key = 'All_Tasks_Aggregate'
-csv_name = 'CHAOS_Total_scr_scores.csv'
+csv_name = 'CHAOS_DICE_values.csv'
 
 
 ## 2) Parameters for SLiver07 challenge to get 'Total_score'
@@ -34,6 +34,7 @@ csv_name = 'CHAOS_Total_scr_scores.csv'
 # sub_key = 'Total_score'
 # multitask = False
 # include_empty_tasks = False
+# exclude_key = ''
 # csv_name = 'SLiver07_scores.csv'
 
 ## 3) Parameters for ACDC@LUNGHP challenge to get 'DiceCoefficient' values
