@@ -1,7 +1,7 @@
 
 # Result Fetcher Tool for grand-challenge.org
 
-This script collects and saves evaluation scores/values of any challenge hosted on [grand-challenge.org](grand-challenge.org) website. Results are exported as csv files. The tool can be highly modified for specific challenges. Multiple submissions coming from same teams are renamed as <Team Name>2, <Team Name>3, ... <Team Name>N, 
+This script collects and saves evaluation scores/values of any challenge hosted on [grand-challenge.org](grand-challenge.org) website. Results are exported as csv files. The tool can be highly modified for specific challenges. Multiple submissions coming from same teams are renamed as "Team Name2", "Team Name3", ... "Team NameN", 
 
 ## Usage
 The flowing parameters of the challenge should be defined at the beginning of the script. 
