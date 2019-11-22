@@ -1,25 +1,25 @@
 
 # Result Fetcher Tool for grand-challenge.org
 
-This script gets evaluation scores of a challenge hosted on [grand-challenge.org](grand-challenge.org) website. Results are exported as csv files. Any challenge result hosted on [grand-challenge.org](grand-challenge.org) can be fetched and saved via this tool. The tool can be highly modified for specific challenges.
+This script collects and saves evaluation scores/values of any challenge hosted on [grand-challenge.org](grand-challenge.org) website. Results are exported as csv files. The tool can be highly modified for specific challenges.
 
 ## Usage
-The flowing parameters of the challenge should be defined  at the beginning of the script. 
+The flowing parameters of the challenge should be defined at the beginning of the script. 
  - **url**: Results page of the challenge.
- - **main_key**: The main key under specified Task(s). 
+ - **main_key**: The main key under specified task(s). 
  -   **sub_key**: The sub key under specified main key. In general, it defines the metric result or score 
   -  **multitask**: *True* if the challenge has multiple tasks. Otherwise *False*.
-  -  **include_empty_tasks**: If it is *False*, the script does not include scores of a task if all cases in the task have *zero* or *None* value. If it is *True*, It collects everything regardless of value.
+  -  **include_empty_tasks**: If it is *False*, the script does not include scores of a task if all cases in the task have *zero* or *None* value. If it is *True*, the script collects everything regardless of the values.
   -  **exclude_key**: (optional) You may define some keys to exclude their values.
-  -  **csv_name**: The name of output file.
+  -  **csv_name**: The name of the output file.
 
-Since each challenge has unique result export structure, the parameters above are highly specific for the challenges. It is advised to examine JSON tree of the challenge's result by clicking on a arbitrary result. For example, JSON tree structure of CHAOS challenge can be examined via [this link](https://chaos.grand-challenge.org/evaluation/results/9c1281b8-a6e2-44bf-b3b3-ed1167fcfb20/).
+Since each challenge has unique result exporting structure, the parameters above are highly specific for the challenges. It is advised to examine JSON tree of the challenge's result by clicking on an arbitrary result. For example, JSON tree structure of CHAOS challenge can be examined via [this link](https://chaos.grand-challenge.org/evaluation/results/9c1281b8-a6e2-44bf-b3b3-ed1167fcfb20/).
 
 
 ## Examples
- There are three example usage of the tool inside the code for [CHAOS](https://chaos.grand-challenge.org/), [SLiver07](https://sliver07.grand-challenge.org/) and [ACDC@LUNGHP](https://acdc-lunghp.grand-challenge.org/) challenges.
+ There are three example usages of the tool inside the code for [CHAOS](https://chaos.grand-challenge.org/), [SLiver07](https://sliver07.grand-challenge.org/) and [ACDC@LUNGHP](https://acdc-lunghp.grand-challenge.org/) challenges.
 
-1. Parameters for CHAOS challenge to get 'DICE' values
+1. Parameters for CHAOS challenge to get 'DICE' values for all tasks
 ```python
 url = "https://chaos.grand-challenge.org/evaluation/results/" 
 main_key = 'case'
@@ -52,7 +52,7 @@ csv_name = 'acdc-lunghp_scores.csv'
 ```
 
 # Required packages: 
-The scripts works with Python 3 versions. Also the following packages are needed:
+The scripts works with Python 3. Also the following packages are needed:
 - bs4
 - urllib
 - re
