@@ -66,7 +66,7 @@ The script works with Python 3. Also the following packages are needed:
 - pandas
 - simplejson
 
-The script was tested on:
+The script was tested with:
 ```
 Python==3.7.4, bs4==0.0.1, urllib3==1.25.3, pandas==0.24.2, simplejson==3.16.0 
 ```
