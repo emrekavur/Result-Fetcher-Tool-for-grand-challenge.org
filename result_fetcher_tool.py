@@ -48,8 +48,11 @@ csv_name = 'CHAOS_DICE_values.csv'
 
 def main():
     links = get_user_score_links(url)
+    print('--> Results are collecting from {}'.format(url))
+    print('--> User(Team) names:\n')
     ALL_SCORES = get_challenge_scores(links, include_empty_tasks=False)
     ALL_SCORES.to_csv(csv_name, index=False)
+    print('--> Saved to {}\n'.format(csv_name))
 
 
 def get_user_score_links(url):
@@ -89,7 +92,7 @@ def get_challenge_scores(links, include_empty_tasks=False):
         print(alg_name)
         all_scores = get_alg_data(soup, all_scores, alg_name, include_empty_tasks)
 
-    print('{} results collected'.format(len(links)))
+    print('\n--> {} results collected'.format(len(links)))
     return all_scores
 
 
