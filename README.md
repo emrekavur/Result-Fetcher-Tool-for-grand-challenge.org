@@ -1,7 +1,7 @@
 
 # Result Fetcher Tool for grand-challenge.org
 
-This script collects and saves evaluation scores/values of any challenge that publish results via [grand-challenge.org](grand-challenge.org)'s evaluation system. Every evaluated submission at grand-challenge.org is published in JSON format that contains all results for each case in the challenge data. This tool collects this data from the selected challenge for all submissions. Some specification of this tool are: 
+This script collects and saves evaluation scores/values of any challenge that publish results via [grand-challenge.org](grand-challenge.org)'s evaluation system. Every evaluated submission at grand-challenge.org is published in JSON format that contains all results for each case in the challenge data. This tool collects this data from the selected challenge for all submissions. Some specifications of this tool are: 
 
 - Results are exported as csv files. 
 - Multiple submissions from same teams are automatically renamed as "Team Name2", "Team Name3", ... "Team NameN".
