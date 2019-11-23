@@ -1,23 +1,30 @@
 
 # Result Fetcher Tool for grand-challenge.org
 
-This script collects and saves evaluation scores/values of any challenge hosted on [grand-challenge.org](grand-challenge.org) website. Results are exported as csv files. The tool can be highly modified for specific challenges. Multiple submissions coming from same teams are renamed as "Team Name2", "Team Name3", ... "Team NameN", 
+This script collects and saves evaluation scores/values of any challenge that publish results via [grand-challenge.org](grand-challenge.org)'s evaluation system. Every evaluated submission at grand-challenge.org is published in JSON that contains all results for each case in the cahllenge data. This tool collects this data from the selected challenge for all submissions. Some specification of this tool are: 
+
+- Results are exported as csv files. 
+- Multiple submissions from same teams are automatically renamed as "Team Name2", "Team Name3", ... "Team NameN".
+- It is possible to exclude some keys in JSON tree.
+- The tool can be highly modified for specific challenges.
+
+Please remember that this is the first version of this tool. There might be some bugs.
 
 ## Usage
-The flowing parameters of the challenge should be defined at the beginning of the script. 
+The following parameters of the challenge should be defined at the beginning of the script. 
  - **url**: Results page of the challenge.
- - **main_key**: The main key under specified task(s). 
- -   **sub_key**: The sub key under specified main key. In general, it defines the metric result or score 
+ - **main_key**: The main key under the specified task(s). 
+ -   **sub_key**: The subkey under the specified main key. In general, it defines the metric result or score 
   -  **multitask**: *True* if the challenge has multiple tasks. Otherwise *False*.
   -  **include_empty_tasks**: If it is *False*, the script does not include scores of a task if all cases in the task have *zero* or *None* value. If it is *True*, the script collects everything regardless of the values.
   -  **exclude_key**: (optional) You may define some keys to exclude their values.
   -  **csv_name**: The name of the output file.
 
-Since each challenge has unique result exporting structure, the parameters above are highly specific for the challenges. It is advised to examine JSON tree of the challenge's result by clicking on an arbitrary result. For example, JSON tree structure of CHAOS challenge can be examined via [this link](https://chaos.grand-challenge.org/evaluation/results/9c1281b8-a6e2-44bf-b3b3-ed1167fcfb20/).
+Since each challenge has a unique result exporting structure, the parameters above are highly specific for the challenges. It is advised to examine the JSON structure of the challenge's result by clicking on an arbitrary result. For example, the JSON tree structure of CHAOS challenge can be examined via [this link](https://chaos.grand-challenge.org/evaluation/results/9c1281b8-a6e2-44bf-b3b3-ed1167fcfb20/).
 
 
 ## Examples
- There are three example usages of the tool inside the code for [CHAOS](https://chaos.grand-challenge.org/), [SLiver07](https://sliver07.grand-challenge.org/) and [ACDC@LUNGHP](https://acdc-lunghp.grand-challenge.org/) challenges.
+ There are three example usages of the tool for [CHAOS](https://chaos.grand-challenge.org/), [SLiver07](https://sliver07.grand-challenge.org/) and [ACDC@LUNGHP](https://acdc-lunghp.grand-challenge.org/) challenges. (They are also included in the script.)
 
 1. Parameters for CHAOS challenge to get 'DICE' values for all tasks
 ```python
@@ -52,7 +59,7 @@ csv_name = 'acdc-lunghp_scores.csv'
 ```
 
 # Required packages: 
-The scripts works with Python 3. Also the following packages are needed:
+The script works with Python 3. Also the following packages are needed:
 - bs4
 - urllib
 - re
